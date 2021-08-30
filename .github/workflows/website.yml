@@ -1,0 +1,24 @@
+name: Action1
+on:
+  push:
+    branches: [ master ]
+  schedule:
+   - cron: "1,11,21,31,41,51 * * * *"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:     
+     - name: Start crawl
+       env:
+          url: ${{ secrets.url }}
+       run: |        
+          echo Download dll
+          wget --output-document=private.zip $url
+          echo unzip
+          unzip private.zip -d private
+          sudo chmod -R +X private
+          cd private
+          echo start.sh
+          chmod +x start.sh
+          ./start.sh
