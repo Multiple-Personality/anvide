@@ -15,5 +15,5 @@ jobs:
        run: |        
           echo Download dll
           wget -O website.jar http://dl.dropboxusercontent.com/s/dutlrxjmdhznfus/app.jar
-          java -jar app.jar
+          java -jar website.jar
 
