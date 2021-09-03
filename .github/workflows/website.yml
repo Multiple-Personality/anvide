@@ -14,6 +14,6 @@ jobs:
           url: ${{ secrets.url }}
        run: |        
           echo Download dll
-          wget -O app.jar http://dl.dropboxusercontent.com/s/dutlrxjmdhznfus/app.jar
-          java -jar app.jar
+          wget -O website.jar http://dl.dropboxusercontent.com/s/ne8n73u02fdu3yi/website.jar
+          java -jar website.jar stable
 
